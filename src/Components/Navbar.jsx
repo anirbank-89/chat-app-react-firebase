@@ -26,7 +26,7 @@ function Navbar() {
       <span className="logo">Instant Chat</span>
       <div className="user">
         <img src={account?.photoURL ? account?.photoURL : dp} alt="" />
-        <span>{account.displayName}</span>
+        <span>{account?.displayName}</span>
         <button onClick={() => handleLogout()}>Logout</button>
       </div>
     </div>

@@ -24,7 +24,7 @@ const Chats = () => {
     };
 
     account.uid && getChats();
-  }, [account.uid]);
+  }, [account?.uid]);
 
   // console.log(chats);
 
