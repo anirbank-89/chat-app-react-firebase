@@ -13,7 +13,7 @@ const Chats = () => {
 
   useEffect(() => {
     const getChats = () => {
-      const unsub = onSnapshot(doc(db, "userChats", account.uid), (doc) => {
+      const unsub = onSnapshot(doc(db, "userChats", account?.uid), (doc) => {
         // console.log("Current data: ", doc.data());
         setchats(Object.entries(doc.data())); // the data structure of chats = [[uid, { date: "2024-01-05T12:36:00Z", userInfo: {photoURL, uid, displayName}}],...]
       });
@@ -23,7 +23,7 @@ const Chats = () => {
       };
     };
 
-    account.uid && getChats();
+    account?.uid && getChats();
   }, [account?.uid]);
 
   // console.log(chats);
