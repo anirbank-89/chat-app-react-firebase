@@ -4,7 +4,6 @@ import { ChatContext } from "../context/ChatProvider";
 
 // Assets
 import dp from "../Resources/images/pexels-ozan-çulha-18675664.jpg";
-import messagePic from "../Resources/images/pexels-michael-james-beach-18716876.jpg";
 
 function Message({ message }) {
   // console.log("message", message);
@@ -20,13 +19,13 @@ function Message({ message }) {
     <div
       ref={latestMsg}
       className={`message ${
-        message.senderId == account.uid ? "sender" : "owner"
+        message.senderId === account.uid ? "sender" : "owner"
       }`}
     >
       <div className="messageInfo">
         <img
           src={
-            message.senderId == account.uid
+            message.senderId === account.uid
               ? account?.photoURL
                 ? account?.photoURL
                 : dp
