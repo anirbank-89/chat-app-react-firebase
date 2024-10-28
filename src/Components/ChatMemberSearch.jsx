@@ -24,6 +24,8 @@ function ChatMemberSearch() {
 
   const handleSearch = async (event) => {
     if (event.code === "Enter") {
+      console.log(username);
+      
       const usersRef = collection(db, "users");
 
       // Create a query against the collection.
@@ -32,6 +34,7 @@ function ChatMemberSearch() {
       try {
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
+          console.log(doc.data());
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, " => ", doc.data());
           setuser(doc.data());
